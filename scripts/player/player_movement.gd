@@ -1,27 +1,28 @@
 extends CharacterBody2D
 
-const SPEED = 4000.0
+const SPEED = 3700.0
 var direction : Vector2
-var target = Vector2(0, 0)
+var target
 var click : Vector2
 
 @onready var animation_player = $AnimatedSprite2D
 @onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
 
-func _ready() -> void:
-	makepath()
-
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("left_click"):
 		click = get_global_mouse_position()
-		target = (click - global_position).normalized()
+		target = click
 		print(target)
 		makepath()
 	
-	direction = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = direction * SPEED * delta
-	
+	if target:
+		if position > (target + Vector2(1, 1)) or position < (target - Vector2(1, 1)):
+			direction = to_local(nav_agent.get_next_path_position()).normalized()
+			velocity = direction * SPEED * delta
+		else:
+			velocity = Vector2(0, 0)
+			
 	if velocity.length() > 0:
 		animation_player.play("walk")
 	else:

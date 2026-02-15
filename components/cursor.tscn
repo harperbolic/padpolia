@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dcgu2hgb36cpf"]
+
+[ext_resource type="Script" uid="uid://defyhoru6jgpb" path="res://scripts/player/cursor.gd" id="1_0t8ko"]
+[ext_resource type="Texture2D" uid="uid://6ott0o333ybb" path="res://assets/_PLACEHOLDER/cursors/PNG/Basic/Default/cursor_none.png" id="1_f7wah"]
+[ext_resource type="Texture2D" uid="uid://tsicpp20ahkp" path="res://assets/_PLACEHOLDER/cursors/PNG/Basic/Default/hand_open.png" id="2_1pxpd"]
+[ext_resource type="Texture2D" uid="uid://b7wuy2db3xjws" path="res://assets/_PLACEHOLDER/cursors/PNG/Basic/Default/arrow_n.png" id="2_3oqqw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7wah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f7wah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1pxpd")
+}],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3oqqw")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7wah"]
+size = Vector2(15, 22)
+
+[node name="Cursor" type="Area2D" unique_id=426194117]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_0t8ko")
+
+[node name="AnimationPlayer2D" type="AnimatedSprite2D" parent="." unique_id=863461401]
+position = Vector2(6, 10)
+sprite_frames = SubResource("SpriteFrames_f7wah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=310036747]
+position = Vector2(6.5, 10)
+shape = SubResource("RectangleShape2D_f7wah")

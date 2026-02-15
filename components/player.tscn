@@ -77,16 +77,16 @@ animations = [{
 script = ExtResource("1_1wqow")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1998195897]
+position = Vector2(1, -27)
 sprite_frames = SubResource("SpriteFrames_if8o1")
 animation = &"walk"
 frame_progress = 0.72514915
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1824677522]
-position = Vector2(0, 26)
 shape = SubResource("CircleShape2D_jhk7o")
+disabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=830815897]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1260711092]
 autostart = true
