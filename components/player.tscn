@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cvx0q1r5oloy3"]
+
+[ext_resource type="Script" uid="uid://k82m33mvyxbo" path="res://scripts/player/player_movement.gd" id="1_1wqow"]
+[ext_resource type="Texture2D" uid="uid://btkmdbf1oemjo" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle1.png" id="1_5odhx"]
+[ext_resource type="Texture2D" uid="uid://dodckrxpc4b2o" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle2.png" id="2_1kub6"]
+[ext_resource type="Texture2D" uid="uid://br5tfsft3p64e" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle3.png" id="3_kuobi"]
+[ext_resource type="Texture2D" uid="uid://tgci2ciu1nm2" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Idle/idle4.png" id="4_0lm1f"]
+[ext_resource type="Texture2D" uid="uid://dlbkb2lwcwj4s" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk1.png" id="5_jhk7o"]
+[ext_resource type="Texture2D" uid="uid://b3vit4p7805b1" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk2.png" id="6_1wqow"]
+[ext_resource type="Texture2D" uid="uid://dad7b7u7pt78f" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk3.png" id="7_6qb5m"]
+[ext_resource type="Texture2D" uid="uid://btda8xpjgyx2q" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk4.png" id="8_kn8w6"]
+[ext_resource type="Texture2D" uid="uid://eknvxk6wnlws" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk5.png" id="9_eaetu"]
+[ext_resource type="Texture2D" uid="uid://d31ows8gx8g6i" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk6.png" id="10_1dyya"]
+[ext_resource type="Texture2D" uid="uid://cak1a7pfhjh6" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk7.png" id="11_t8b0b"]
+[ext_resource type="Texture2D" uid="uid://cq6on7fdb6y8s" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk8.png" id="12_ntxa4"]
+[ext_resource type="Texture2D" uid="uid://ddrpex5j4loph" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk9.png" id="13_6esqw"]
+[ext_resource type="Texture2D" uid="uid://bg4uok7lyfokm" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Sprites/Brawler-Girl/Walk/walk10.png" id="14_hoi4b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_if8o1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5odhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1kub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kuobi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0lm1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jhk7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1wqow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6qb5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kn8w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eaetu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1dyya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t8b0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ntxa4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6esqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hoi4b")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhk7o"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1233880789]
+script = ExtResource("1_1wqow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1998195897]
+sprite_frames = SubResource("SpriteFrames_if8o1")
+animation = &"walk"
+frame_progress = 0.72514915
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1824677522]
+position = Vector2(0, 26)
+shape = SubResource("CircleShape2D_jhk7o")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=830815897]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1260711092]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
