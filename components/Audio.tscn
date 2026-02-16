@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dtvgofhsixni6"]
+
+[node name="Audio" type="Node" unique_id=1346586044]
+
+[node name="Music" type="Node" parent="." unique_id=82416487]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music" unique_id=609030790]
+
+[node name="SFX" type="Node" parent="." unique_id=410479460]
+
+[node name="voice" type="AudioStreamPlayer" parent="SFX" unique_id=1012895146]

@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://ck1th6nrbv45v"]
+
+[ext_resource type="Script" uid="uid://c6u1dcuk2fl3o" path="res://scripts/UI/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Theme" uid="uid://du2dw84t2y5nx" path="res://themes/UI_Theme.tres" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://16bhoyllnrv" path="res://assets/ui/saves/door1_block.png" id="3_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cmj2ekriuqho3" path="res://assets/ui/saves/door2_block.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://c1p1c7h87stif" path="res://assets/ui/saves/door3_block.png" id="5_tbmy8"]
+
+[node name="MainMenu" type="Control" unique_id=1847704441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="Menu" type="Panel" parent="." unique_id=827195145]
+visible = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 156.0
+offset_right = 334.0
+offset_bottom = 200.0
+theme = ExtResource("2_wu84c")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu" unique_id=103330184]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -40.0
+offset_right = 121.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="start" type="Button" parent="Menu/HBoxContainer" unique_id=1899737841]
+layout_mode = 2
+theme = ExtResource("2_wu84c")
+text = "Começar Jogo"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Menu/HBoxContainer" unique_id=1579107710]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="options" type="Button" parent="Menu/HBoxContainer/VBoxContainer" unique_id=1285017057]
+layout_mode = 2
+theme = ExtResource("2_wu84c")
+text = "Opções"
+
+[node name="quit" type="Button" parent="Menu/HBoxContainer/VBoxContainer" unique_id=1578687013]
+layout_mode = 2
+theme = ExtResource("2_wu84c")
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+text = "Sair"
+
+[node name="Label" type="Label" parent="Menu" unique_id=587871926]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.5
+offset_top = -116.0
+offset_right = 110.5
+offset_bottom = -54.0
+grow_horizontal = 2
+theme = ExtResource("2_wu84c")
+theme_override_font_sizes/font_size = 64
+text = "Padpôlia"
+
+[node name="Options" type="Panel" parent="." unique_id=1745195622]
+visible = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 27.0
+offset_right = 334.0
+offset_bottom = 211.0
+theme = ExtResource("2_wu84c")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Options" unique_id=1379168035]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -77.0
+offset_right = 49.5
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsTitle" type="Label" parent="Options/HBoxContainer" unique_id=719299614]
+layout_mode = 2
+theme = ExtResource("2_wu84c")
+text = "Opções"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Options/HBoxContainer" unique_id=692047599]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Options/HBoxContainer" unique_id=2135448837]
+layout_mode = 2
+text = "Efeitos Sonoros"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="Options/HBoxContainer" unique_id=931979]
+layout_mode = 2
+step = 10.0
+value = 50.0
+
+[node name="HSeparator2" type="HSeparator" parent="Options/HBoxContainer" unique_id=2125210791]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Options/HBoxContainer" unique_id=1922889094]
+layout_mode = 2
+text = "Música"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Options/HBoxContainer" unique_id=1763878843]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+step = 10.0
+value = 50.0
+
+[node name="HSeparator3" type="HSeparator" parent="Options/HBoxContainer" unique_id=1615418901]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="Options/HBoxContainer" unique_id=532788304]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="Options/HBoxContainer" unique_id=1696092102]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="back" type="Button" parent="Options/HBoxContainer" unique_id=509597925]
+layout_mode = 2
+text = "Voltar"
+
+[node name="Save" type="Control" parent="." unique_id=1638637555]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wu84c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Save" unique_id=1738708920]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Save/VBoxContainer" unique_id=1124702745]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Slot1" type="Panel" parent="Save/VBoxContainer/HBoxContainer" unique_id=1399780264]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot1" unique_id=1222705950]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -20.0
+offset_right = 27.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="Save/VBoxContainer/HBoxContainer/Slot1/VBoxContainer" unique_id=1646327502]
+layout_mode = 2
+text = "Novo Jogo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot1/VBoxContainer" unique_id=1916926500]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot1/VBoxContainer/HBoxContainer" unique_id=99985580]
+layout_mode = 2
+texture = ExtResource("3_rtw2f")
+
+[node name="TextureRect2" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot1/VBoxContainer/HBoxContainer" unique_id=294807114]
+layout_mode = 2
+texture = ExtResource("4_oa1go")
+
+[node name="TextureRect3" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot1/VBoxContainer/HBoxContainer" unique_id=1849005500]
+layout_mode = 2
+texture = ExtResource("5_tbmy8")
+
+[node name="Slot2" type="Panel" parent="Save/VBoxContainer/HBoxContainer" unique_id=792261190]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot2" unique_id=627449178]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -20.0
+offset_right = 27.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="Save/VBoxContainer/HBoxContainer/Slot2/VBoxContainer" unique_id=1868750009]
+layout_mode = 2
+text = "Novo Jogo"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot2/VBoxContainer" unique_id=1327542775]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot2/VBoxContainer/HBoxContainer2" unique_id=1132166164]
+layout_mode = 2
+texture = ExtResource("3_rtw2f")
+
+[node name="TextureRect2" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot2/VBoxContainer/HBoxContainer2" unique_id=1945476204]
+layout_mode = 2
+texture = ExtResource("4_oa1go")
+
+[node name="TextureRect3" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot2/VBoxContainer/HBoxContainer2" unique_id=744671877]
+layout_mode = 2
+texture = ExtResource("5_tbmy8")
+
+[node name="Slot3" type="Panel" parent="Save/VBoxContainer/HBoxContainer" unique_id=811223062]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot3" unique_id=907683444]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -20.0
+offset_right = 27.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="Save/VBoxContainer/HBoxContainer/Slot3/VBoxContainer" unique_id=1397967242]
+layout_mode = 2
+text = "Novo Jogo"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Save/VBoxContainer/HBoxContainer/Slot3/VBoxContainer" unique_id=67440319]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot3/VBoxContainer/HBoxContainer2" unique_id=285703653]
+layout_mode = 2
+texture = ExtResource("3_rtw2f")
+
+[node name="TextureRect2" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot3/VBoxContainer/HBoxContainer2" unique_id=1881115903]
+layout_mode = 2
+texture = ExtResource("4_oa1go")
+
+[node name="TextureRect3" type="TextureRect" parent="Save/VBoxContainer/HBoxContainer/Slot3/VBoxContainer/HBoxContainer2" unique_id=205215566]
+layout_mode = 2
+texture = ExtResource("5_tbmy8")
+
+[node name="back" type="Button" parent="Save/VBoxContainer" unique_id=768406939]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="Menu/HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Save/VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://csbdx3igw1lx6"]
+
+[ext_resource type="Theme" uid="uid://bhswhocknoacc" path="res://themes/dialog_theme.tres" id="1_os6bd"]
+
+[node name="Button" type="Button" unique_id=1449042538]
+theme = ExtResource("1_os6bd")
+text = "1. This is a choice it can be more than one line it's fine"
+alignment = 0
+autowrap_mode = 2

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwg8av2l6401l"]
+
+[ext_resource type="Theme" uid="uid://bhswhocknoacc" path="res://themes/dialog_theme.tres" id="1_5gsio"]
+
+[node name="HSeparator" type="HSeparator" unique_id=381416918]
+theme = ExtResource("1_5gsio")

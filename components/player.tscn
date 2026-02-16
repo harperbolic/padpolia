@@ -71,7 +71,8 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jhk7o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wqow"]
+size = Vector2(4, 4)
 
 [node name="Player" type="CharacterBody2D" unique_id=1233880789]
 script = ExtResource("1_1wqow")
@@ -83,8 +84,7 @@ animation = &"walk"
 frame_progress = 0.72514915
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1824677522]
-shape = SubResource("CircleShape2D_jhk7o")
-disabled = true
+shape = SubResource("RectangleShape2D_1wqow")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=830815897]
 

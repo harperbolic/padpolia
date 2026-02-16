@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 3700.0
 var direction : Vector2
@@ -9,14 +10,12 @@ var click : Vector2
 @onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
 
 func _physics_process(delta: float) -> void:
-	
 	if Input.is_action_just_pressed("left_click"):
 		click = get_global_mouse_position()
 		target = click
-		print(target)
 		makepath()
 	
-	if target:
+	if target and not Definitions.is_player_busy:
 		if position > (target + Vector2(1, 1)) or position < (target - Vector2(1, 1)):
 			direction = to_local(nav_agent.get_next_path_position()).normalized()
 			velocity = direction * SPEED * delta
@@ -32,6 +31,9 @@ func _physics_process(delta: float) -> void:
 		animation_player.flip_h = false
 	elif velocity.x < 0:
 		animation_player.flip_h = true
+	
+	if Definitions.is_player_busy:
+		velocity = Vector2(0, 0)
 	
 	move_and_slide()
 

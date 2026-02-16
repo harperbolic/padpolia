@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://du2dw84t2y5nx"]
+
+[ext_resource type="FontFile" uid="uid://dm3emh6wp2naf" path="res://assets/fonts/OldeTome.ttf" id="1_arc7m"]
+[ext_resource type="Texture2D" uid="uid://bxhupf3e0aeyp" path="res://assets/ui/grabber.png" id="2_4cxfn"]
+[ext_resource type="Texture2D" uid="uid://begvxbelqkgsv" path="res://assets/ui/grabber2.png" id="3_h3j2u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arc7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cxfn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3j2u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkof3"]
+
+[sub_resource type="Gradient" id="Gradient_arc7m"]
+offsets = PackedFloat32Array(0.019125683, 0.2568306, 0.52459013, 0.73497266, 1)
+colors = PackedColorArray(0.019607844, 0.019607844, 0.019607844, 0, 0.011764706, 0.011764706, 0.011764706, 1, 0, 0, 0, 1, 0.012617188, 0.012617188, 0.012617188, 1, 0.012617188, 0.012617188, 0.012617188, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4cxfn"]
+gradient = SubResource("Gradient_arc7m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3j2u"]
+texture = SubResource("GradientTexture2D_4cxfn")
+
+[resource]
+default_font = ExtResource("1_arc7m")
+Button/colors/font_color = Color(0.5449751, 0.5449739, 0.5449743, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/fonts/font = ExtResource("1_arc7m")
+Button/styles/focus = SubResource("StyleBoxEmpty_arc7m")
+Button/styles/hover = SubResource("StyleBoxEmpty_4cxfn")
+Button/styles/normal = SubResource("StyleBoxEmpty_h3j2u")
+Button/styles/pressed = SubResource("StyleBoxEmpty_bkof3")
+HSlider/icons/grabber = ExtResource("2_4cxfn")
+HSlider/icons/grabber_highlight = ExtResource("3_h3j2u")
+Panel/styles/panel = SubResource("StyleBoxTexture_h3j2u")
