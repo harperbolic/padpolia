@@ -1,11 +1,58 @@
 [gd_scene format=3 uid="uid://dtvgofhsixni6"]
 
+[ext_resource type="Script" uid="uid://l5ai54s4rhgn" path="res://scripts/autoload/Audio.gd" id="1_lmyso"]
+[ext_resource type="AudioStream" uid="uid://b46uifw2jkar4" path="res://assets/sfx/dialog.wav" id="2_2f046"]
+[ext_resource type="AudioStream" uid="uid://hw052of7xhnk" path="res://assets/sfx/dialog_end.wav" id="3_ho75p"]
+[ext_resource type="AudioStream" uid="uid://bn6tfg0xhex6e" path="res://assets/sfx/dialog_OM.wav" id="3_u2478"]
+[ext_resource type="AudioStream" uid="uid://blm04vybqti82" path="res://assets/sfx/dialog_YB.wav" id="4_yljdn"]
+[ext_resource type="AudioStream" uid="uid://bauu31o0hteuy" path="res://assets/sfx/dialog_AW.wav" id="5_myph7"]
+[ext_resource type="AudioStream" uid="uid://c27x6toijky2l" path="res://assets/sfx/dialog_MC.wav" id="6_yljdn"]
+
 [node name="Audio" type="Node" unique_id=1346586044]
+script = ExtResource("1_lmyso")
 
 [node name="Music" type="Node" parent="." unique_id=82416487]
+unique_name_in_owner = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music" unique_id=609030790]
+bus = &"Mus"
 
 [node name="SFX" type="Node" parent="." unique_id=410479460]
+unique_name_in_owner = true
+
+[node name="none" type="AudioStreamPlayer" parent="SFX" unique_id=783972568]
+bus = &"SFX"
 
 [node name="voice" type="AudioStreamPlayer" parent="SFX" unique_id=1012895146]
+stream = ExtResource("2_2f046")
+pitch_scale = 0.8
+bus = &"SFX"
+
+[node name="voiceOM" type="AudioStreamPlayer" parent="SFX" unique_id=1694750913]
+stream = ExtResource("3_u2478")
+mix_target = 2
+bus = &"SFX"
+
+[node name="voiceYB" type="AudioStreamPlayer" parent="SFX" unique_id=419338088]
+stream = ExtResource("4_yljdn")
+pitch_scale = 0.8
+mix_target = 2
+bus = &"SFX"
+
+[node name="voiceAW" type="AudioStreamPlayer" parent="SFX" unique_id=60509139]
+stream = ExtResource("5_myph7")
+pitch_scale = 0.8
+mix_target = 2
+bus = &"SFX"
+
+[node name="voiceMC" type="AudioStreamPlayer" parent="SFX" unique_id=1402671258]
+stream = ExtResource("6_yljdn")
+pitch_scale = 0.9
+mix_target = 2
+bus = &"SFX"
+
+[node name="dialog_end" type="AudioStreamPlayer" parent="SFX" unique_id=682976691]
+stream = ExtResource("3_ho75p")
+bus = &"SFX"
+
+[connection signal="finished" from="SFX/dialog_end" to="." method="_on_dialog_end_finished"]

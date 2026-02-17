@@ -9,6 +9,7 @@ func _ready() -> void:
 	OptionPanel.visible = false
 	SavePanel.visible = false
 	
+	Dialog.start_dialog(Definitions.TestText, true)
 
 
 func _on_start_pressed() -> void:

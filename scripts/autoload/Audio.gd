@@ -21,12 +21,5 @@ func stop_all_music() -> void:
 		audio_node = child
 		audio_node.stop()
 
-func _on_phone_ring_finished() -> void:
-	sfx_finished.emit()
-
-func _on_click_finished() -> void:
-	sfx_finished.emit()
-
-
-func _on_client_ring_finished() -> void:
+func _on_dialog_end_finished() -> void:
 	sfx_finished.emit()

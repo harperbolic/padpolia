@@ -1,25 +1,17 @@
 [gd_scene format=3 uid="uid://dia1c4ofp2yga"]
 
 [ext_resource type="Theme" uid="uid://bhswhocknoacc" path="res://themes/dialog_theme.tres" id="1_lcuca"]
-[ext_resource type="Script" uid="uid://cyb1hdeng7mu7" path="res://scripts/UI/Dialog/scroll_container.gd" id="2_jbqop"]
-[ext_resource type="Script" uid="uid://bmn4tlk24bdth" path="res://scripts/UI/Dialog/text_box.gd" id="2_t6utm"]
-[ext_resource type="PackedScene" uid="uid://j6xyt5j27hmk" path="res://components/UI/char_dialog.tscn" id="5_ur3st"]
 [ext_resource type="Texture2D" uid="uid://c78x5x1e5gvdp" path="res://assets/portraits/OM.png" id="6_0oyd1"]
-[ext_resource type="PackedScene" uid="uid://cwg8av2l6401l" path="res://components/UI/separator.tscn" id="6_t6utm"]
-[ext_resource type="PackedScene" uid="uid://bteuq4pv86koe" path="res://components/UI/DM_dialog.tscn" id="7_42t1g"]
 [ext_resource type="Texture2D" uid="uid://pnvhskv3xnke" path="res://assets/portraits/YB.png" id="7_ur3st"]
-[ext_resource type="PackedScene" uid="uid://csbdx3igw1lx6" path="res://components/UI/choice_button.tscn" id="8_2f8vd"]
 
-[node name="DialogContainer" type="Control" unique_id=1352036921]
+[node name="DialogContainer" type="Control" unique_id=780497422]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 273.0
+offset_left = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_lcuca")
-script = ExtResource("2_t6utm")
 
 [node name="Panel" type="Panel" parent="." unique_id=451872696]
 layout_mode = 1
@@ -78,7 +70,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_lcuca")
 scroll_hint_mode = 1
-script = ExtResource("2_jbqop")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer" unique_id=1776027475]
 layout_mode = 2
@@ -88,23 +79,8 @@ theme_override_constants/margin_left = 3
 theme_override_constants/margin_right = 3
 
 [node name="textbox" type="VBoxContainer" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer" unique_id=1705560746]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 alignment = 1
-
-[node name="CharDialog" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox" unique_id=1446068963 instance=ExtResource("5_ur3st")]
-layout_mode = 2
-
-[node name="HSeparator" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox" unique_id=381416918 instance=ExtResource("6_t6utm")]
-layout_mode = 2
-
-[node name="TextNarrator" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox" unique_id=263232150 instance=ExtResource("7_42t1g")]
-layout_mode = 2
-
-[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox" unique_id=625692250]
-layout_mode = 2
-theme = ExtResource("1_lcuca")
-
-[node name="Button" parent="Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox" unique_id=1449042538 instance=ExtResource("8_2f8vd")]
-layout_mode = 2

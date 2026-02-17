@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://j6xyt5j27hmk"]
 
+[ext_resource type="Script" uid="uid://bmn4tlk24bdth" path="res://scripts/UI/Dialog/text_box.gd" id="1_7axc2"]
 [ext_resource type="FontFile" uid="uid://dm3emh6wp2naf" path="res://assets/fonts/OldeTome.ttf" id="1_tgaow"]
 [ext_resource type="FontFile" uid="uid://yoogu7a6lycn" path="res://assets/fonts/Pixuf.ttf" id="2_7axc2"]
 
 [node name="CharDialog" type="VBoxContainer" unique_id=1446068963]
 theme_override_constants/separation = 0
+script = ExtResource("1_7axc2")
 
 [node name="Character" type="Label" parent="." unique_id=654896697]
 layout_mode = 2
@@ -21,7 +23,13 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.74509805, 0.8901961, 0.96862745, 1)
 theme_override_fonts/font = ExtResource("2_7axc2")
 theme_override_font_sizes/font_size = 8
-text = "This is a dialog text from a character"
+text = "This is a dialog text by a character"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=859020923]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_letter_display_timer_timeout"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bteuq4pv86koe"]
 
 [ext_resource type="FontFile" uid="uid://yoogu7a6lycn" path="res://assets/fonts/Pixuf.ttf" id="1_nxagl"]
+[ext_resource type="Script" uid="uid://dm7rejclhfv5" path="res://scripts/UI/Dialog/dm_box.gd" id="2_45t06"]
 
 [node name="TextNarrator" type="Label" unique_id=263232150]
 custom_minimum_size = Vector2(1, 0)
@@ -12,3 +13,10 @@ text = "This is a narrator text, it says important things"
 horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters_behavior = 1
+script = ExtResource("2_45t06")
+
+[node name="Timer" type="Timer" parent="." unique_id=1618581860]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_letter_display_timer_timeout"]

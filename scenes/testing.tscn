@@ -632,7 +632,7 @@ position = Vector2(97, 227)
 
 [node name="Door" type="Node2D" parent="." unique_id=1676434512]
 script = ExtResource("4_3dx25")
-direction = "down"
+direction = "top"
 scene = "main_menu"
 
 [node name="Interactible" type="Area2D" parent="Door" unique_id=1147592856]

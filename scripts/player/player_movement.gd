@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		target = click
 		makepath()
 	
-	if target and not Definitions.is_player_busy:
+	if target and not Definitions.is_player_busy and not Dialog.is_dialog_active:
 		if position > (target + Vector2(1, 1)) or position < (target - Vector2(1, 1)):
 			direction = to_local(nav_agent.get_next_path_position()).normalized()
 			velocity = direction * SPEED * delta
