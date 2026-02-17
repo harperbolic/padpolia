@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c1p1c7h87stif" path="res://assets/ui/saves/door3_block.png" id="5_tbmy8"]
 
 [node name="MainMenu" type="Control" unique_id=1847704441]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

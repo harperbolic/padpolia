@@ -8,9 +8,6 @@ func _ready() -> void:
 	MenuPanel.visible = true
 	OptionPanel.visible = false
 	SavePanel.visible = false
-	
-	Dialog.start_dialog(Definitions.OM_L1_1, true)
-
 
 func _on_start_pressed() -> void:
 	SceneManager.load_scene("testing")

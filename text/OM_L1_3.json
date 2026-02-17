@@ -1,0 +1,12 @@
+{
+	"0" : {"name" : "OM", "text" : "Então acho que isso não vai funcionar, desculpe."},
+	"1" : {"name" : "MC", "text" : "É só não ligar para o que eles pensam."},
+	"2" : {"name" : "OM", "text" : "Como é?"},
+	"3" : {"name" : "MC", "text" : "Porque sua imagem na visão deles importaria para você, Viyeniya?"},
+	"4" : {"name" : "OM", "text" : "..."},
+	"5" : {"name" : "DM", "text" : "Ele leva uma mão à bochecha por um momento, visivelmente matutando o pensamento até que algo lhe atingisse."},
+	"6" : {"name" : "OM", "text" : "Oh! Acho que eu entendi! Você está dizendo que é justamente por estar me preocupando tanto, que eu estou parecendo estranho! Então eu deveria agir mais relaxadamente, como se não importasse tanto."},
+	"7" : {"name" : "OM", "text" : "Isso pode funcionar. Obrigado, Vadik."},
+	"8" : {"name" : "MC", "text" : "...Sim."},
+	"9" : {"name" : "OM", "text" : "Vou colocar isso em prática. Até depois!"}
+}

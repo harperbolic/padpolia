@@ -1,0 +1,6 @@
+{
+    "0" : {"name" : "OM", "text" : "E o que eles iriam fazer? Forçar seus filhos a passar mais tempo com o avô pois ele se sentiu solitário?"},
+    "1" : {"name" : "OM", "text" : "Isso só iria deixar eles mais ressentidos ainda. Iriam me associar a algo negativo, algo obrigatório. E consequentemente iam ressentir aos pais deles também. Isso é o que eu menos quero."},
+    "2" : {"name" : "DM", "text" : "A reação negativa é clara. Ele nunca cogitaria este conselho."},
+    "3" : {"name" : "EXEC_DIALOG", "text" : "OM_L1_3"}
+}

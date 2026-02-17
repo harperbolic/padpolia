@@ -10,12 +10,12 @@ var click : Vector2
 @onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") and not Definitions.is_player_busy:
 		click = get_global_mouse_position()
 		target = click
 		makepath()
 	
-	if target and not Definitions.is_player_busy and not Dialog.is_dialog_active:
+	if target and not Definitions.is_player_busy:
 		if position > (target + Vector2(1, 1)) or position < (target - Vector2(1, 1)):
 			direction = to_local(nav_agent.get_next_path_position()).normalized()
 			velocity = direction * SPEED * delta
@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Definitions.is_player_busy:
 		velocity = Vector2(0, 0)
+		target = null
 	
 	move_and_slide()
 

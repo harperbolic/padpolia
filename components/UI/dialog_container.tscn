@@ -4,17 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c78x5x1e5gvdp" path="res://assets/portraits/OM.png" id="6_0oyd1"]
 [ext_resource type="Texture2D" uid="uid://pnvhskv3xnke" path="res://assets/portraits/YB.png" id="7_ur3st"]
 
-[node name="DialogContainer" type="Control" unique_id=780497422]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 280.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DialogContainer" type="Node" unique_id=1916034927]
 
 [node name="Panel" type="Panel" parent="." unique_id=451872696]
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -84,3 +76,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1082028809]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -150.0
+grow_horizontal = 2
+grow_vertical = 2

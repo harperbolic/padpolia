@@ -28,7 +28,7 @@ func exec_action() -> void:
 	pass
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") and not Definitions.is_player_busy:
 		if inside_area:
 			selected = true
 			if is_in_range:

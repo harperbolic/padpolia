@@ -1,0 +1,7 @@
+{
+    "0" : {"name" : "OM", "text" : "E o que iria acontecer? Eles ficariam com pena do pobre velhinho e iam começar a passar mais tempo comigo?"},
+    "1" : {"name" : "OM", "text" : "No máximo, iriam caçoar e me chamar de carente, pervertido ou nojento. Não sei onde aprenderam isso, mas já ouvi eles falando estas coisas."},
+    "2" : {"name" : "OM", "text" : "E a minha imagem já está precária para começo de conversa..."},
+    "3" : {"name" : "DM", "text" : "Ele ri com a própria piadinha, mas parece realmente preocupado com o prospecto."},
+    "4" : {"name" : "EXEC_DIALOG", "text" : "OM_L1_3"}
+}

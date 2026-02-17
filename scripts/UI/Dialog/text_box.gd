@@ -49,6 +49,7 @@ func display_text(text_to_display : String, speaker_name_func : String):
 	
 	dialog_text = text_to_display
 	is_first_letter = true
+	
 	_display_letter()
 
 func _display_letter():
@@ -79,11 +80,12 @@ func _display_letter():
 func _on_letter_display_timer_timeout() -> void:
 	if letter_index <= dialog_text.length() - 1:
 		Audio.play_sfx(character_voice)
-	_display_letter()
 	
-	if is_first_letter:
+	if letter_index == 1:
 		scroll = get_node("../../..")
 		scroll.set_deferred("scroll_vertical", scroll.get_v_scroll_bar().max_value)
+	
+	_display_letter()
 	
 	is_first_letter = false
 

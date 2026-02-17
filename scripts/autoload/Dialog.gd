@@ -39,6 +39,7 @@ func start_dialog(lines: Dictionary, local_is_new_dialog : bool):
 	_pass_line()
 	
 	is_dialog_active = true
+	Definitions.is_player_busy = true
 
 func _display_container() -> void:
 	if is_new_dialog:
@@ -62,7 +63,7 @@ func _pass_line() -> void:
 			text_box = DM_DIALOG.instantiate()
 			last_textbox_passed = "DM"
 		"EXEC_DIALOG":
-			Dialog.start_dialog(Definitions.DialogTable[dialog_lines[str(current_line_index)].text], false)
+			Dialog.start_dialog(Definitions[dialog_lines[str(current_line_index)].text], false)
 			return
 		_:
 			text_box = CHAR_DIALOG.instantiate()
@@ -76,6 +77,7 @@ func _pass_line() -> void:
 		choices_counter += 1
 	
 	textbox_slot.add_child(text_box)
+	
 	if last_textbox_passed == "CH":
 		text_box.display_button(str(choices_counter, ". ", dialog_lines[str(current_line_index)].text),
 								dialog_lines[str(current_line_index)].action,
@@ -109,9 +111,9 @@ func _unhandled_input(event) -> void:
 		current_line_index += 1
 		if current_line_index >= dialog_lines.size():
 			Audio.play_sfx("dialog_end")
-			await Audio.sfx_finished
 			container.queue_free()
 			dialog_ended.emit()
 			is_dialog_active = false
+			Definitions.is_player_busy = false
 			return
 		_pass_line()

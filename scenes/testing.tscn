@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cvx0q1r5oloy3" path="res://components/player.tscn" id="1_ryjsw"]
 [ext_resource type="Texture2D" uid="uid://dgvks0eo6lvtq" path="res://assets/_PLACEHOLDER/Streets of Fight files/Assets/Stage Layers/tileset.png" id="2_pcu7d"]
-[ext_resource type="Script" uid="uid://cmdkmrasra6j6" path="res://scripts/environment/door.gd" id="4_3dx25"]
+[ext_resource type="Script" uid="uid://ca26pxl6mqned" path="res://scripts/environment/object.gd" id="3_l6grw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pcu7d"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -631,9 +631,11 @@ tile_set = SubResource("TileSet_3dx25")
 position = Vector2(97, 227)
 
 [node name="Door" type="Node2D" parent="." unique_id=1676434512]
-script = ExtResource("4_3dx25")
-direction = "top"
-scene = "main_menu"
+script = ExtResource("3_l6grw")
+has_dialog = true
+dialog = "OM_L1_0"
+is_one_time = true
+has_interacted_dialog = "OM_L1_4"
 
 [node name="Interactible" type="Area2D" parent="Door" unique_id=1147592856]
 position = Vector2(213, 57)
