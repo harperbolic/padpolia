@@ -20,6 +20,10 @@ var is_dialog_active = false
 var can_advance_line = false
 var is_new_dialog = true
 
+var choices_counter = 0
+
+var choices = []
+
 signal dialog_ended
 
 func start_dialog(lines: Dictionary, local_is_new_dialog : bool):
@@ -43,13 +47,17 @@ func _display_container() -> void:
 
 func _pass_line() -> void:
 	var textbox_slot = container.get_node("Panel/VBoxContainer2/TextScroll/ScrollContainer/MarginContainer/textbox")
-	if last_textbox_passed != "choice" and dialog_lines[str(current_line_index)].name == "CH":
+	if last_textbox_passed == "CH" and dialog_lines[str(current_line_index)].name == "CH":
+		pass
+	else:
 		textbox_slot.add_child(SEPARATOR.instantiate())
 	
 	match dialog_lines[str(current_line_index)].name:
 		"CH":
 			text_box = CHOICE_BUTTON.instantiate()
-			last_textbox_passed = "choice"
+			choices.append(text_box)
+			text_box.option_pressed.connect(_on_choice)
+			last_textbox_passed = "CH"
 		"DM":
 			text_box = DM_DIALOG.instantiate()
 			last_textbox_passed = "DM"
@@ -59,18 +67,38 @@ func _pass_line() -> void:
 		_:
 			text_box = CHAR_DIALOG.instantiate()
 			last_textbox_passed = "char"
-		
+	
 	text_box.finished_displaying.connect(_on_text_finished_displaying)
 	
+	if last_textbox_passed != "CH":
+		choices_counter = 0
+	else:
+		choices_counter += 1
+	
 	textbox_slot.add_child(text_box)
-	text_box.display_text(dialog_lines[str(current_line_index)].text, dialog_lines[str(current_line_index)].name)
+	if last_textbox_passed == "CH":
+		text_box.display_button(str(choices_counter, ". ", dialog_lines[str(current_line_index)].text),
+								dialog_lines[str(current_line_index)].action,
+								dialog_lines[str(current_line_index)].target)
+	else:
+		text_box.display_text(dialog_lines[str(current_line_index)].text, dialog_lines[str(current_line_index)].name)
 	
 	can_advance_line = false
 
 
 func _on_text_finished_displaying() -> void:
-	can_advance_line = true
 	text_box.finished_displaying.disconnect(_on_text_finished_displaying)
+	can_advance_line = true
+	if last_textbox_passed == "CH":
+		current_line_index += 1
+		if current_line_index >= dialog_lines.size():
+			return
+		_pass_line()
+
+func _on_choice(chose_button : Button) -> void:
+	for i in choices:
+		if i != chose_button:
+			i.queue_free()
 
 func _unhandled_input(event) -> void:
 	if (

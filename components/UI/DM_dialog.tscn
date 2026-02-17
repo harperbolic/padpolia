@@ -5,11 +5,13 @@
 
 [node name="TextNarrator" type="Label" unique_id=263232150]
 custom_minimum_size = Vector2(1, 0)
+offset_right = 45.0
+offset_bottom = 8.0
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.26073298, 0.3201974, 0.3522167, 1)
 theme_override_fonts/font = ExtResource("1_nxagl")
 theme_override_font_sizes/font_size = 8
-text = "This is a narrator text, it says important things"
+text = "This is narrator text"
 horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 2

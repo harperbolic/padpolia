@@ -25,6 +25,12 @@ bus = &"SFX"
 
 [node name="voice" type="AudioStreamPlayer" parent="SFX" unique_id=1012895146]
 stream = ExtResource("2_2f046")
+volume_db = -2.0
+pitch_scale = 0.8
+bus = &"SFX"
+
+[node name="voice2" type="AudioStreamPlayer" parent="SFX" unique_id=2035904755]
+stream = ExtResource("2_2f046")
 pitch_scale = 0.8
 bus = &"SFX"
 

@@ -5,7 +5,7 @@ var char_label : Label
 var label: Label
 var letter_timer : Timer
 
-var text = ""
+var dialog_text = ""
 var letter_index = 0
 var speaker_name
 var scroll
@@ -17,6 +17,8 @@ var punc_time = 0.2
 
 var voice : String = "voice"
 var played_sound = false
+
+var character_voice = voice
 
 signal finished_displaying
 
@@ -42,16 +44,19 @@ func display_text(text_to_display : String, speaker_name_func : String):
 		"AW":
 			char_label.text = "Lichiye"
 			voice = "voiceAW"
-	text = text_to_display
+	
+	character_voice = voice
+	
+	dialog_text = text_to_display
 	is_first_letter = true
 	_display_letter()
 
 func _display_letter():
-	label.text = text
+	label.text = dialog_text
 	label.visible_characters = letter_index + 1
 	
 	letter_index += 1
-	if letter_index >= text.length():
+	if letter_index >= dialog_text.length():
 		if played_sound == false:
 			Audio.play_sfx(voice)
 			played_sound = true
@@ -62,16 +67,18 @@ func _display_letter():
 	
 	letter_timer.autostart = true
 	
-	match text[letter_index]:
-		"!", ".", ",", "?", "…":
+	match dialog_text[letter_index]:
+		"!", ".", ",", "?":
 			letter_timer.start(punc_time)
 		" ":
 			letter_timer.start(space_time)
+			voice = "none"
 		_:
 			letter_timer.start(letter_time)
-	Audio.play_sfx(voice)
 
 func _on_letter_display_timer_timeout() -> void:
+	if letter_index <= dialog_text.length() - 1:
+		Audio.play_sfx(character_voice)
 	_display_letter()
 	
 	if is_first_letter:
@@ -84,4 +91,4 @@ func _unhandled_input(event) -> void:
 	if (
 		event.is_action_pressed("advance_dialog")
 	):
-		letter_index = text.length()
+		letter_index = dialog_text.length()

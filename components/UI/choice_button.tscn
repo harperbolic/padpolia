@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://csbdx3igw1lx6"]
 
 [ext_resource type="Theme" uid="uid://bhswhocknoacc" path="res://themes/dialog_theme.tres" id="1_os6bd"]
+[ext_resource type="Script" uid="uid://cdh20y6t5bord" path="res://scripts/UI/Dialog/choice_button.gd" id="2_i75yx"]
 
 [node name="Button" type="Button" unique_id=1449042538]
 theme = ExtResource("1_os6bd")
 text = "1. This is a choice it can be more than one line it's fine"
 alignment = 0
 autowrap_mode = 2
+script = ExtResource("2_i75yx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
